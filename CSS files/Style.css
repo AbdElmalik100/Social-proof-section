@@ -1,0 +1,218 @@
+/* Global Rules  */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    /* Primary colors  */
+    --Very-Dark-Magenta: hsl(300, 43%, 22%);
+    --Soft-Pink: hsl(333, 80%, 67%);
+    /* secondary colors  */
+    --Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+    --Light-Grayish-Magenta: hsl(300, 24%, 96%);
+    --White: hsl(0, 0%, 100%);
+}
+
+body {
+    font-family: 'Spartan', sans-serif;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.bg-image img:last-child {
+    width: 1350px;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    margin: 100px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+/* ------------------------------------ */
+.container .upper {
+    display: flex;
+    align-items: flex-start;
+    gap: 200px;
+}
+
+.container .upper .text {
+    width: 440px;
+    font-size: 20px;
+}
+
+.container .upper .text h1 {
+    color: var(--Very-Dark-Magenta);
+    margin: 0;
+}
+
+.container .upper .text p {
+    margin-top: 5px;
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--Dark-Grayish-Magenta);
+}
+
+.container .upper .boxses {
+    display: grid;
+    grid-gap: 15px;
+}
+
+.container .upper .boxses .box {
+    width: 400px;
+    height: 50px;
+    background-color: var(--Light-Grayish-Magenta);
+    border-radius: 10px;
+}
+
+.container .upper .boxses .box:first-child {
+    transform: translate(-100px, 0);
+}
+
+.container .upper .boxses .box:nth-child(2) {
+    transform: translate(-50px, 0);
+}
+
+.container .upper .boxses .box .container-2 {
+    display: grid;
+    grid: 50px / 20px 20px 20px 20px 50px auto;
+    align-items: center;
+    margin: 0 30px;
+}
+
+.container .upper .boxses .box .container-2 p {
+    font-weight: 800;
+    font-size: 13px;
+    color: var(--Very-Dark-Magenta);
+}
+
+.container .lower .big-card {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .lower .big-card .card {
+    width: 330px;
+    height: 200px;
+    background-color: var(--Very-Dark-Magenta);
+    border-radius: 10px;
+}
+
+.container .lower .big-card .card:nth-child(2) {
+    transform: translate(0, 20px);
+}
+
+.container .lower .big-card .card:last-child {
+    transform: translate(0, 40px);
+}
+
+.container .lower .big-card .card .container-3 {
+    margin: 25px;
+}
+
+.container .lower .big-card .card .container-3 .txt {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.container .lower .big-card .card .container-3 .txt img {
+    width: 15%;
+    height: 15%;
+    border-radius: 50%;
+}
+
+.container .lower .big-card .card .container-3 .txt h3 {
+    display: grid;
+    color: var(--White);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.container .lower .big-card .card .container-3 .txt span {
+    color: var(--Soft-Pink);
+    font-weight: 400;
+}
+
+.container .lower .big-card .card .container-3 p {
+    color: var(--White);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+@media (max-width: 767px) {
+    body {
+        padding: 50px 10px;
+        overflow: visible;
+    }
+
+    .bg-image {
+        display: none;
+    }
+
+    .container {
+        margin: 0;
+        position: relative;
+    }
+
+    .container .upper {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .container .upper .text p {
+        margin-top: 25px;
+    }
+
+    .container .upper .text {
+        text-align: center;
+        width: 100%;
+    }
+
+    .container .upper .boxses {
+        width: 100%;
+    }
+
+    .container .upper .boxses .box {
+        width: 100%;
+        height: 100%;
+    }
+
+    .container .upper .boxses .box:first-child,
+    .container .upper .boxses .box:nth-child(2) {
+        transform: none;
+    }
+
+    .container .upper .boxses .box .container-2 {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        justify-items: center;
+    }
+
+    .container .upper .boxses .box .container-2 p {
+        grid-column: 1/6;
+    }
+
+    .container .lower .big-card {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .container .lower .big-card .card {
+        width: 100%;
+        border-radius: 5px;
+        height: 100%;
+    }
+
+    .container .lower .big-card .card:nth-child(2),
+    .container .lower .big-card .card:last-child {
+        transform: none;
+    }
+}
